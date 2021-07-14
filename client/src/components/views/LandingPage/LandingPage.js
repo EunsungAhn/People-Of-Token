@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { FaCode } from "react-icons/fa";
+// import { FaCode } from "react-icons/fa";
 import axios from "axios";
 import { Icon, Col, Card, Row } from "antd";
 import Meta from "antd/lib/card/Meta";
+import ImageSlider from "../../utils/ImageSlider";
 
 function LandingPage() {
   // DB에 있는 data의 개수만큼 Card를 생성해야 하므로 useState를 사용한다
@@ -24,14 +25,7 @@ function LandingPage() {
 
     return (
       <Col lg={6} md={8} xs={24} key={index}>
-        <Card
-          cover={
-            <img
-              style={{ width: "100%", maxHeight: "150px" }}
-              src={`http://localhost:5000/${product.images[0]}`}
-            />
-          }
-        >
+        <Card cover={<ImageSlider images={product.images} />}>
           <Meta title={product.title} description={`$${product.price}`} />
         </Card>
       </Col>
