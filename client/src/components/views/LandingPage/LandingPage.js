@@ -4,6 +4,8 @@ import axios from "axios";
 import { Icon, Col, Card, Row } from "antd";
 import Meta from "antd/lib/card/Meta";
 import ImageSlider from "../../utils/ImageSlider";
+import CheckBox from "./Sections/CheckBox";
+import { continents } from "./Sections/Data";
 
 function LandingPage() {
   // DB에 있는 data의 개수만큼 Card를 생성해야 하므로 useState를 사용한다
@@ -74,6 +76,11 @@ function LandingPage() {
       </div>
 
       {/* Filter */}
+
+      {/* CheckBox */}
+      <CheckBox list={continents} />
+
+      {/* RadioBox */}
 
       {/* Search */}
 
