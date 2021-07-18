@@ -15,6 +15,10 @@ function LandingPage() {
   const [Skip, setSkip] = useState(0);
   const [Limit, setLimit] = useState(8);
   const [PostSize, setPostSize] = useState(0);
+  const [Filters, setFilters] = useState({
+    continents: [],
+    price: [],
+  });
 
   useEffect(() => {
     let body = {
@@ -67,6 +71,24 @@ function LandingPage() {
     );
   });
 
+  const showFilteredResuls = (filters) => {
+    let body = {
+      skip: 0,
+      limit: Limit,
+      filters: filters,
+    };
+
+    getProducts(body);
+    setSkip(0);
+  };
+
+  const handleFilters = (filters, category) => {
+    // filters는 checkbox 컴포넌트에서 check된 것들의 id가 담겨져 있는 array를 포함한다
+    const newFilters = { ...Filters };
+    newFilters[category] = filters;
+    showFilteredResuls(newFilters);
+  };
+
   return (
     <div style={{ width: "75%", margin: "3rem auto" }}>
       <div style={{ textAlign: "center" }}>
@@ -78,7 +100,10 @@ function LandingPage() {
       {/* Filter */}
 
       {/* CheckBox */}
-      <CheckBox list={continents} />
+      <CheckBox
+        list={continents}
+        handleFilters={(filters) => handleFilters(filters, "continents")}
+      />
 
       {/* RadioBox */}
 
