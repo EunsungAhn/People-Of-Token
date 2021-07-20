@@ -53,11 +53,21 @@ router.post("/products", (req, res) => {
 
   for (let key in req.body.filters) {
     if (req.body.filters[key].length > 0) {
-      findArgs[key] = req.body.filters[key];
+      console.log("key", key);
+
+      if (key === "price") {
+        findArgs[key] = {
+          // greater than equal, less then equal
+          $gte: req.body.filters[key][0],
+          $lte: req.body.filters[key][1],
+        };
+      } else {
+        findArgs[key] = req.body.filters[key];
+      }
     }
   }
 
-  // console.log("findArgs", findArgs);
+  console.log("findArgs", findArgs);
 
   // Product라는 collection에서 data를 가져올 때
   // 조건(findArgs)에 맞게 가져오게 한다

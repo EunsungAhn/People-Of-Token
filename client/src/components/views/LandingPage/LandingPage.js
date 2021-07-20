@@ -5,7 +5,8 @@ import { Icon, Col, Card, Row } from "antd";
 import Meta from "antd/lib/card/Meta";
 import ImageSlider from "../../utils/ImageSlider";
 import CheckBox from "./Sections/CheckBox";
-import { continents } from "./Sections/Data";
+import RadioBox from "./Sections/RadioBox";
+import { continents, price } from "./Sections/Data";
 
 function LandingPage() {
   // DB에 있는 data의 개수만큼 Card를 생성해야 하므로 useState를 사용한다
@@ -82,11 +83,32 @@ function LandingPage() {
     setSkip(0);
   };
 
+  const handlePrice = (value) => {
+    const data = price;
+    let array = [];
+
+    for (let key in data) {
+      if (data[key]._id === parseInt(value, 10)) {
+        array = data[key].array;
+      }
+    }
+    return array;
+  };
+
   const handleFilters = (filters, category) => {
     // filters는 checkbox 컴포넌트에서 check된 것들의 id가 담겨져 있는 array를 포함한다
     const newFilters = { ...Filters };
     newFilters[category] = filters;
+
+    console.log("filters", filters);
+
+    if (category === "price") {
+      let priceValues = handlePrice(filters);
+      newFilters[category] = priceValues;
+    }
+
     showFilteredResuls(newFilters);
+    setFilters(newFilters);
   };
 
   return (
@@ -98,14 +120,22 @@ function LandingPage() {
       </div>
 
       {/* Filter */}
-
-      {/* CheckBox */}
-      <CheckBox
-        list={continents}
-        handleFilters={(filters) => handleFilters(filters, "continents")}
-      />
-
-      {/* RadioBox */}
+      <Row gutter={[16, 16]}>
+        <Col lg={12} xs={24}>
+          {/* CheckBox */}
+          <CheckBox
+            list={continents}
+            handleFilters={(filters) => handleFilters(filters, "continents")}
+          />
+        </Col>
+        <Col lg={12} xs={24}>
+          {/* RadioBox */}
+          <RadioBox
+            list={price}
+            handleFilters={(filters) => handleFilters(filters, "price")}
+          ></RadioBox>
+        </Col>
+      </Row>
 
       {/* Search */}
 
