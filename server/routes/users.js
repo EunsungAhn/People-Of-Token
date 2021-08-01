@@ -71,10 +71,11 @@ router.get("/logout", auth, (req, res) => {
 
 router.post("/addToCart", auth, (req, res) => {
   // 먼저 User Collection에 해당 유저의 정보를 가져오기
-  User.findIne({ _id: req.user._id }, (err, userInfo) => {
+  User.findOne({ _id: req.user._id }, (err, userInfo) => {
     // 가져온 정보에서 카트에다 넣으려 하는 상품이 이미 들어 있는지 확인하기
-    let duplicate = userInfo.cart.forEach((item) => {
-      if (item.id === req.bdoy.productId) {
+    let duplicate = false;
+    userInfo.cart.forEach((item) => {
+      if (item.id === req.body.productId) {
         duplicate = true;
       }
     });
