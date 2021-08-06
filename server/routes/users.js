@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { User } = require("../models/User");
+const { Product } = require("../models/Product");
 
 const { auth } = require("../middleware/auth");
 
@@ -116,6 +117,36 @@ router.post("/addToCart", auth, (req, res) => {
       );
     }
   });
+});
+
+router.get("/removeFromCart", auth, (req, res) => {
+  // 먼저 cart 안에 내가 지우려고 한 상품 지워주기
+  User.findOneAndUpdate(
+    // 아래 코드처럼 할 수 있는 이유는 auth middleware 때문이다
+    { _id: req.user._id },
+    {
+      $pull: {
+        cart: { id: req.query.id },
+      },
+    },
+    { new: true },
+    (err, userInfo) => {
+      let cart = userInfo.cart;
+      let array = cart.map((item) => {
+        return item.id;
+      });
+
+      // product collection에서 현재 남아 있는 상품들의 정보를 가져오기
+      Product.find({ _id: { $in: array } })
+        .populate("writer")
+        .exec((err, productInfo) => {
+          return res.status(200).json({
+            productInfo,
+            cart,
+          });
+        });
+    }
+  );
 });
 
 module.exports = router;
