@@ -6,7 +6,8 @@ import {
   LOGOUT_USER,
   ADD_TO_CART,
   GET_CART_ITEMS,
-  REMOVE_CART_ITEM
+  REMOVE_CART_ITEM,
+  ON_SUCCESS_BUY,
 } from "./types";
 import { USER_SERVER } from "../components/Config.js";
 
@@ -100,18 +101,29 @@ export function removeCartItem(productId) {
     .then((response) => {
       // users.js에서 넘겨 받은 productInfo와 cart 정보를 조합해서
       // CartDetail을 만든다
-      response.data.cart.forEach(item => {
+      response.data.cart.forEach((item) => {
         response.data.productInfo.forEach((product, index) => {
           if (item.id === product._id) {
-            response.data.productInfo[index].quantity = item.quantity
+            response.data.productInfo[index].quantity = item.quantity;
           }
-        })
-      })
+        });
+      });
       return response.data;
     });
 
   return {
     type: REMOVE_CART_ITEM,
+    payload: request,
+  };
+}
+
+export function onSuccessBuy(data) {
+  const request = axios
+    .post(`/api/users/successBuy`, data)
+    .then((response) => response.data);
+
+  return {
+    type: ON_SUCCESS_BUY,
     payload: request,
   };
 }
