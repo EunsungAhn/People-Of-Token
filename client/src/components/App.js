@@ -9,6 +9,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import UploadProductPage from "./views/UploadProductPage/UploadProductPage.js";
 import DetailProductPage from "./views/DetailProductPage/DetailProductPage.js";
 import CartPage from "./views/CartPage/CartPage.js";
+import HistoryPage from "./views/HistoryPage/HistoryPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 
@@ -36,6 +37,7 @@ function App() {
             component={Auth(DetailProductPage, null)}
           />
           <Route exact path="/user/cart" component={Auth(CartPage, true)} />
+          <Route exact path="/history" component={Auth(HistoryPage, true)} />
         </Switch>
       </div>
       <Footer />
