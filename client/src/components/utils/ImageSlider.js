@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Col, Card, Row, Carousel } from "antd";
+import { Carousel } from "antd";
 
 function ImageSlider(props) {
   return (
@@ -10,6 +10,7 @@ function ImageSlider(props) {
             <img
               style={{ width: "100%", maxHeight: "150px" }}
               src={`http://localhost:5000/${image}`}
+              alt="image_slider"
             />
           </div>
         ))}
