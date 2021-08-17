@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
-import LeftMenu from './Sections/LeftMenu';
-import RightMenu from './Sections/RightMenu';
-import { Drawer, Button, Icon } from 'antd';
-import './Sections/Navbar.css';
+import React, { useState } from "react";
+import LeftMenu from "./Sections/LeftMenu";
+import RightMenu from "./Sections/RightMenu";
+import { Drawer, Button, Icon } from "antd";
+import "./Sections/Navbar.css";
+
+import logoImage from "./ImgSrc/logo2.png";
 
 function NavBar() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
-    setVisible(true)
+    setVisible(true);
   };
 
   const onClose = () => {
-    setVisible(false)
+    setVisible(false);
   };
 
   return (
-    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
+    <nav
+      className="menu"
+      style={{ position: "fixed", zIndex: 5, width: "100%" }}
+    >
       <div className="menu__logo">
-        <a href="/">Logo</a>
+        <a href="/">
+          <img src={logoImage} alt="logo" style={{ width: "150px" }} />
+        </a>
       </div>
       <div className="menu__container">
-        <div className="menu_left">
+        {/* <div className="menu_left">
           <LeftMenu mode="horizontal" />
-        </div>
+        </div> */}
         <div className="menu_rigth">
           <RightMenu mode="horizontal" />
         </div>
@@ -47,7 +54,7 @@ function NavBar() {
         </Drawer>
       </div>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
