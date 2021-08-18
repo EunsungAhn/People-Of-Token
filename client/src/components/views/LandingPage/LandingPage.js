@@ -9,6 +9,11 @@ import RadioBox from "./Sections/RadioBox";
 import SearchFeature from "./Sections/SearchFeature";
 import { continents, price } from "./Sections/Data";
 
+// import "./LandingPage.css";
+
+// import bannerImg from "../../../../public/imgSrc/nft-banner-image1.png";
+import bannerImg from "./imgSrc/nft-banner-image1.png";
+
 function LandingPage() {
   // DB에 있는 data의 개수만큼 Card를 생성해야 하므로 useState를 사용한다
   // Skip: 어디서부터 데이터를 가져오는지에 대한 위치
@@ -133,30 +138,83 @@ function LandingPage() {
   };
 
   return (
-    <div style={{ width: "75%", margin: "3rem auto" }}>
-      <div style={{ textAlign: "center" }}>
-        <h2>
-          Let's Travel Anywhere <Icon type="rocket" />
-        </h2>
+    <div className="root" style={{ width: "75%", margin: "3rem auto" }}>
+      <div className="banner" style={{ height: "380px" }}>
+        <div
+          className="banner-container"
+          style={{
+            margin: "0px auto",
+            maxWidth: "min(1280px, 100% - 40px",
+            width: "100%",
+            flexWrap: "wrap",
+          }}
+        >
+          <div
+            className="banner-col1-title"
+            style={{
+              textAlign: "left",
+              float: "left",
+              display: "inline-block",
+              width: "50%",
+              padding: "35px 20px",
+            }}
+          >
+            <h1
+              className="banner-title-header"
+              style={{
+                fontSize: "45px",
+                fontWeight: "650",
+                lineHeight: "110%",
+                paddingTop: "5px",
+                letterSpacing: "0.8px",
+              }}
+            >
+              Discover, collect, and sell extraordinary NFTs
+            </h1>
+            <h3
+              className="banner-title-subheader"
+              style={{
+                fontSize: "24px",
+                textAlign: "left",
+                maxWidth: "290px",
+                letterSpacing: "0.8px",
+              }}
+            >
+              on the world's first &#38; largest NFT marketplace
+            </h3>
+          </div>
+
+          <div
+            className="banner-col2-image"
+            style={{ float: "right", margin: "13px 70px" }}
+          >
+            <img
+              className="banner-image"
+              alt="nft-image"
+              src={bannerImg}
+              style={{ maxWidth: "300px" }}
+            />
+          </div>
+        </div>
       </div>
 
       {/* Filter */}
-      <Row gutter={[16, 16]}>
-        <Col lg={12} xs={24}>
-          {/* CheckBox */}
-          <CheckBox
-            list={continents}
-            handleFilters={(filters) => handleFilters(filters, "continents")}
-          />
-        </Col>
-        <Col lg={12} xs={24}>
-          {/* RadioBox */}
-          <RadioBox
-            list={price}
-            handleFilters={(filters) => handleFilters(filters, "price")}
-          ></RadioBox>
-        </Col>
-      </Row>
+      <div className="filter" style={{ justifyContent: "center" }}>
+        <Row gutter={[16, 16]}>
+          <Col lg={12} xs={24}>
+            <CheckBox
+              list={continents}
+              handleFilters={(filters) => handleFilters(filters, "continents")}
+            />
+          </Col>
+          <Col lg={12} xs={24}>
+            <RadioBox
+              list={price}
+              handleFilters={(filters) => handleFilters(filters, "price")}
+            ></RadioBox>
+          </Col>
+        </Row>
+      </div>
 
       {/* Search */}
       <div
