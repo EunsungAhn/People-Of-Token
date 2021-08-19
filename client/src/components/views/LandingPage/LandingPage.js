@@ -144,7 +144,7 @@ function LandingPage() {
           className="banner-container"
           style={{
             margin: "0px auto",
-            maxWidth: "min(1280px, 100% - 40px",
+            maxWidth: "min(1280px, 100% - 40px)",
             width: "100%",
             flexWrap: "wrap",
           }}
