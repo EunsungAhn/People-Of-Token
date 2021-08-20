@@ -9,7 +9,7 @@ import RadioBox from "./Sections/RadioBox";
 import SearchFeature from "./Sections/SearchFeature";
 import { continents, price } from "./Sections/Data";
 
-// import "./LandingPage.css";
+import "./LandingPage.css";
 
 // import bannerImg from "../../../../public/imgSrc/nft-banner-image1.png";
 import bannerImg from "./imgSrc/nft-banner-image1.png";
@@ -140,60 +140,18 @@ function LandingPage() {
   return (
     <div className="root" style={{ width: "75%", margin: "3rem auto" }}>
       <div className="banner" style={{ height: "380px" }}>
-        <div
-          className="banner-container"
-          style={{
-            margin: "0px auto",
-            maxWidth: "min(1280px, 100% - 40px)",
-            width: "100%",
-            flexWrap: "wrap",
-          }}
-        >
-          <div
-            className="banner-col1-title"
-            style={{
-              textAlign: "left",
-              float: "left",
-              display: "inline-block",
-              width: "50%",
-              padding: "35px 20px",
-            }}
-          >
-            <h1
-              className="banner-title-header"
-              style={{
-                fontSize: "45px",
-                fontWeight: "650",
-                lineHeight: "110%",
-                paddingTop: "5px",
-                letterSpacing: "0.8px",
-              }}
-            >
+        <div className="banner-container">
+          <div className="banner-col1-title" style={{}}>
+            <h1 className="banner-title-header">
               Discover, collect, and sell extraordinary NFTs
             </h1>
-            <h3
-              className="banner-title-subheader"
-              style={{
-                fontSize: "24px",
-                textAlign: "left",
-                maxWidth: "290px",
-                letterSpacing: "0.8px",
-              }}
-            >
+            <h3 className="banner-title-subheader" style={{}}>
               on the world's first &#38; largest NFT marketplace
             </h3>
           </div>
 
-          <div
-            className="banner-col2-image"
-            style={{ float: "right", margin: "13px 70px" }}
-          >
-            <img
-              className="banner-image"
-              alt="nft-image"
-              src={bannerImg}
-              style={{ maxWidth: "300px" }}
-            />
+          <div className="banner-col2-image">
+            <img className="banner-image" alt="nft-image" src={bannerImg} />
           </div>
         </div>
       </div>

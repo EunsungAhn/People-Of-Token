@@ -1,0 +1,38 @@
+.banner-title-header {
+  font-size: 45px;
+  font-weight: 650;
+  line-height: 110%;
+  padding-top: 5px;
+  letter-spacing: 0.8px;
+}
+
+.banner-container {
+  margin: 0px auto;
+  max-width: min(1280px, 100% - 40px);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.banner-col1-title {
+  text-align: left;
+  /* float: left; */
+  display: inline-block;
+  width: 50%;
+  padding: 35px 20px;
+}
+
+.banner-title-subheader {
+  font-size: 24px;
+  text-align: left;
+  max-width: 290px;
+  letter-spacing: 0.8px;
+}
+
+.banner-col2-image {
+  float: right;
+  margin: 13px 70px;
+}
+
+.banner-image {
+  max-width: 300px;
+}
