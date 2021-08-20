@@ -36,3 +36,17 @@
 .banner-image {
   max-width: 300px;
 }
+
+.load-more-button {
+  width: 105px;
+  background-color: #9e9e9e;
+  border: none;
+  color: #fff;
+  padding: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 15px;
+  cursor: pointer;
+}
