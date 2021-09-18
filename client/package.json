@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+
+    "@drizzle/react-components": "^1.5.1",
+    "@drizzle/react-plugin": "^1.5.1",
+    "@drizzle/store": "^1.5.1",
+
     "antd": "^3.24.1",
     "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "formik": "^1.5.8",
     "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-bootstrap": "0.32.4",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.8.6",
     "react-dropzone": "^11.3.4",
@@ -16,6 +22,7 @@
     "react-image-gallery": "^1.2.5",
     "react-paypal-express-checkout": "^1.0.5",
     "react-redux": "^7.1.0-rc.1",
+    "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.4.1",
     "redux": "^4.0.0",

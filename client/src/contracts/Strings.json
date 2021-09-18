@@ -7,7 +7,7 @@
   "sourceMap": "25:1974:6:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "25:1974:6:-;;;;;;;;",
   "source": "pragma solidity ^0.5.0;\n\nlibrary Strings {\n    // via https://github.com/oraclize/ethereum-api/blob/master/oraclizeAPI_0.5.sol\n    function strConcat(string memory _a, string memory _b, string memory _c, string memory _d, string memory _e) internal pure returns (string memory) {\n        bytes memory _ba = bytes(_a);\n        bytes memory _bb = bytes(_b);\n        bytes memory _bc = bytes(_c);\n        bytes memory _bd = bytes(_d);\n        bytes memory _be = bytes(_e);\n        string memory abcde = new string(_ba.length + _bb.length + _bc.length + _bd.length + _be.length);\n        bytes memory babcde = bytes(abcde);\n        uint k = 0;\n        for (uint i = 0; i < _ba.length; i++) babcde[k++] = _ba[i];\n        for (uint i = 0; i < _bb.length; i++) babcde[k++] = _bb[i];\n        for (uint i = 0; i < _bc.length; i++) babcde[k++] = _bc[i];\n        for (uint i = 0; i < _bd.length; i++) babcde[k++] = _bd[i];\n        for (uint i = 0; i < _be.length; i++) babcde[k++] = _be[i];\n        return string(babcde);\n    }\n\n    function strConcat(string memory _a, string memory _b, string memory _c, string memory _d) internal pure returns (string memory) {\n        return strConcat(_a, _b, _c, _d, \"\");\n    }\n\n    function strConcat(string memory _a, string memory _b, string memory _c) internal pure returns (string memory) {\n        return strConcat(_a, _b, _c, \"\", \"\");\n    }\n\n    function strConcat(string memory _a, string memory _b) internal pure returns (string memory) {\n        return strConcat(_a, _b, \"\", \"\", \"\");\n    }\n\n    function uint2str(uint _i) internal pure returns (string memory _uintAsString) {\n        if (_i == 0) {\n            return \"0\";\n        }\n        uint j = _i;\n        uint len;\n        while (j != 0) {\n            len++;\n            j /= 10;\n        }\n        bytes memory bstr = new bytes(len);\n        uint k = len - 1;\n        while (_i != 0) {\n            bstr[k--] = byte(uint8(48 + _i % 10));\n            _i /= 10;\n        }\n        return string(bstr);\n    }\n}\n",
-  "sourcePath": "/Users/eunsungahn/Downloads/Simple-NFT-main/contracts/Strings.sol",
+  "sourcePath": "/Users/eunsungahn/Downloads/Simple-NFT-main-merged/contracts/Strings.sol",
   "ast": {
     "absolutePath": "project:/contracts/Strings.sol",
     "exportedSymbols": {
@@ -8980,7 +8980,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-17T11:52:44.364Z",
+  "updatedAt": "2021-09-18T16:09:11.193Z",
   "devdoc": {
     "methods": {}
   },

@@ -4,7 +4,7 @@ import {
   ButtonGroup,
   ButtonToolbar,
   Col,
-  FormLabel,
+  ControlLabel ,
   Form,
   FormControl,
   FormGroup,
@@ -67,7 +67,7 @@ export default class MetaUpload extends React.Component {
       <div style={{ marginTop: "10px" }}>
         <Form horizontal>
           <FormGroup>
-            <Col componentClass={FormLabel} sm={2}>
+            <Col componentClass={ControlLabel } sm={2}>
               Name
             </Col>
             <Col sm={10}>
@@ -80,7 +80,7 @@ export default class MetaUpload extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={FormLabel} sm={2}>
+            <Col componentClass={ControlLabel } sm={2}>
               Category
             </Col>
             <Col sm={10}>
@@ -97,7 +97,7 @@ export default class MetaUpload extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={FormLabel} sm={2}>
+            <Col componentClass={ControlLabel } sm={2}>
               Description
             </Col>
             <Col sm={10}>
@@ -110,7 +110,7 @@ export default class MetaUpload extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={FormLabel} sm={2}>
+            <Col componentClass={ControlLabel } sm={2}>
               Image hash
             </Col>
             <Col sm={10}>

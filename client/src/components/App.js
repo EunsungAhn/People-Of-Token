@@ -1,13 +1,13 @@
 import React, { Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
-import Auth from "../hoc/auth";
-
 import { generateStore } from "@drizzle/store";
 import { DrizzleProvider } from "@drizzle/react-plugin";
 import { LoadingContainer } from "@drizzle/react-components";
-// import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+
 import options from "./drizzleOptions";
 import Home from "./Home";
+
+import Auth from "../hoc/auth";
 
 // pages for this product
 import LandingPage from "./views/LandingPage/LandingPage.js";
@@ -20,15 +20,14 @@ import HistoryPage from "./views/HistoryPage/HistoryPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 
-const store = {
-  drizzleOptions: options,
-};
-
-const drizzleStore = generateStore(store);
-
 // null   Anyone Can go inside
 // true   only logged in user can go inside
 // false  logged in user can't go inside
+
+const store = {
+  drizzleOptions: options,
+};
+const drizzleStore = generateStore(store);
 
 function App() {
   return (

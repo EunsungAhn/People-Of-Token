@@ -1,4 +1,4 @@
-import DeedIPFSToken from "../contracts/DeedIPFSToken.json";
+import DeedIPFSToken from "./contracts/DeedIPFSToken.json";
 
 const options = {
     

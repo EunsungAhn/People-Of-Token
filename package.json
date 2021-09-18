@@ -1,25 +1,30 @@
 {
-  "name": "react-boiler-plate",
+  "name": "drizzle-box",
   "version": "1.0.0",
-  "description": "react boiler plate",
-  "main": "index.js",
-  "engine": {
-    "node": "10.16.0",
-    "npm": "6.9.0"
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
     "backend": "nodemon server/index.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "John ahn",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truffle-box/drizzle-box.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truffle-box/drizzle-box/issues"
+  },
+  "homepage": "https://github.com/truffle-box/drizzle-box#readme",
   "dependencies": {
-    "@actyx-contrib/react-pond": "^3.0.0",
-    "@drizzle/react-components": "^1.5.3",
-    "@drizzle/react-plugin": "^1.5.3",
-    "@drizzle/store": "^1.5.3",
     "async": "^3.2.1",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
@@ -29,8 +34,8 @@
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "filepond": "^4.29.1",
-    "filepond-plugin-image-preview": "^4.6.10",
-    "ipfs-http-client": "^52.0.3",
+    "filepond-plugin-image-preview": "^4.6.9",
+    "ipfs-http-client": "^29.1.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "mongoose": "^5.13.2",
@@ -38,15 +43,15 @@
     "netlify-cli": "^6.5.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.0.0-beta.6",
     "react-filepond": "^7.1.1",
     "react-loader-spinner": "^4.0.0",
     "react-redux": "^5.0.7",
     "saslprep": "^1.0.3",
     "supports-color": "^7.1.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0"  
   },
   "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.0.33",
     "concurrently": "^4.1.0",
     "nodemon": "^1.19.1"
   }
