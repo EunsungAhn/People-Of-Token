@@ -140,12 +140,12 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 import "filepond/dist/filepond.min.css";
 
-import logo from "./ipfs-logo.png";
+import logo from "../../layouts/ipfs/ipfs-logo.png";
 import ipfs from "../../utils/ipfs";
 import "../../css/filepond-custom.css";
 import "../../css/bootstrap/css/bootstrap.min.css";
 import "../../App.css";
-import MetaUpload from "./MetaUpload";
+import MetaUpload from "../../layouts/ipfs/MetaUpload";
 
 class UploadProductPage extends Component {
   state = {
